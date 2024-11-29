@@ -1,5 +1,12 @@
+# AWS Lambda Sample
+
+[![Last Lambda Deploy](https://github.com/pivotal-djoo/aws-lambda-sample/actions/workflows/ci-cd.yaml/badge.svg)](https://github.com/pivotal-djoo/aws-lambda-sample/actions/workflows/ci-cd.yaml)
+
 ## Pre-requisites
 
+- AWS Cognito User Pool: [Getting started with user pools](https://docs.aws.amazon.com/cognito/latest/developerguide/getting-started-user-pools.html)
+- An App Client within your Cognito user pool: [Create a new application in the Amazon Cognito console
+](https://docs.aws.amazon.com/cognito/latest/developerguide/getting-started-user-pools-application.html)
 - AWS CLI: [Install the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 - AWS SAM CLI: [Install the AWS SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html).
 - Node.js: [Install Node.js 22](https://nodejs.org/en/), including the npm package management tool.
@@ -53,7 +60,7 @@ Emulating API requires [template.yaml](./template.yaml) to define the API's rout
 
 ## Run Tests
 
-Install all dependencies
+Install dependencies
 
 ```bash
 npm install
@@ -68,5 +75,5 @@ npm run test
 Run a specific test
 
 ```bash
-npm run test -- reservations.test
+npm run test -- reservations
 ```
