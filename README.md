@@ -7,7 +7,7 @@
 
 ## Build and Deploy Lambda Functions
 
-Below will deploy Lambda functions for Stealth Store configured in [template.yaml](./template.yaml).
+Below will deploy Lambda functions for Stealth Store configured in [template.yaml](./template.yaml). Ensure environment variables `USER_POOL_ID` and `CLIENT_ID` are configured correctly.
 
 ```bash
 sam build
@@ -15,6 +15,18 @@ sam deploy
 ```
 
 ## Run Lambda Functions Locally
+
+Ensure `env.json` file is present in root folder with the following format.
+
+```json
+{
+  "Parameters": {
+    "RESERVATIONS_TABLE": {{ DYNAMO DB TABLE NAME }},
+    "USER_POOL_ID": {{ AWS COGNITO USERPOOL ID }},
+    "CLIENT_ID": {{ APP CLIENT ID }}
+  }
+}
+```
 
 Run once with a specific event payload.
 
@@ -27,7 +39,7 @@ Example:
 
 ```bash
 sam build
-sam local invoke services --event ./events/get-all-services.json
+sam local invoke reservations --event ./events/get-all-reservations.json
 ```
 
 Alternatively, run the function in API emulation mode.
@@ -56,5 +68,5 @@ npm run test
 Run a specific test
 
 ```bash
-npm run test -- services.test
+npm run test -- reservations.test
 ```
