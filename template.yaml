@@ -11,7 +11,7 @@ Resources:
       Handler: handlers/services.servicesHandler
       Runtime: nodejs22.x
       Architectures:
-        - x86_64
+        - arm64
       MemorySize: 128
       Timeout: 100
       Description: Define all available services offered at the Stealth Store.
